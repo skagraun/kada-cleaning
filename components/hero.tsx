@@ -35,7 +35,7 @@ const HeroSection = () => {
   }, [api]);
 
   return (
-    <section>
+    <section id="home" className="scroll-mt-96">
       <div className="flex items-center justify-center">
         <div className="relative w-full md:pt-0 pt-[3.5rem]">
           <motion.div

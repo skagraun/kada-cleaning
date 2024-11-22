@@ -19,12 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="!scroll-smooth">
       <body
-        className={cn(
-          "bg-slate-200 text-gray-950 relative scroll-smooth",
-          font.className
-        )}
+        className={cn("bg-slate-200 text-gray-950 relative", font.className)}
       >
         <ThemeProvider
           attribute="class"
