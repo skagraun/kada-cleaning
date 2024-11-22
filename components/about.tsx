@@ -1,8 +1,17 @@
+"use client";
+
+import { useSectionInView } from "@/lib/hooks";
 import SectionHeading from "./section-heading";
 
 const AboutSection = () => {
+  const { ref } = useSectionInView("Rólunk", 0.9);
+
   return (
-    <section className="md:mt-12 mt-4 md:scroll-mt-20 scroll-mt-16" id="rolunk">
+    <section
+      ref={ref}
+      className="md:mt-12 mt-4 md:scroll-mt-20 scroll-mt-16"
+      id="rolunk"
+    >
       <div className="flex flex-col items-center justify-center md:gap-12 gap-4">
         <SectionHeading>Rólunk</SectionHeading>
         <p className="max-w-[80rem] px-8 text-justify md:text-lg text-sm">

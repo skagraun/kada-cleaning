@@ -1,12 +1,18 @@
+"use client";
+
 import React from "react";
 
 import { services } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
 import SectionHeading from "./section-heading";
 import Services from "./services";
 
 const ServiceSection = () => {
+  const { ref } = useSectionInView("Szolgáltatások");
+
   return (
     <section
+      ref={ref}
       className="md:mt-12 mt-4 md:scroll-mt-20 scroll-mt-16"
       id="szolgaltatasok"
     >

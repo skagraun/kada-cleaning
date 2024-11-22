@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Autoplay from "embla-carousel-autoplay";
 
+import { useSectionInView } from "@/lib/hooks";
 import { type CarouselApi } from "@/components/ui/carousel";
 
 import {
@@ -34,8 +35,10 @@ const HeroSection = () => {
     });
   }, [api]);
 
+  const { ref } = useSectionInView("Kezdőlap");
+
   return (
-    <section id="home" className="scroll-mt-96">
+    <section ref={ref} id="home" className="scroll-mt-96">
       <div className="flex items-center justify-center">
         <div className="relative w-full md:pt-0 pt-[3.5rem]">
           <motion.div

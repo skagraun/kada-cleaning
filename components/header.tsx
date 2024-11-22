@@ -3,12 +3,14 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { useActiveSectionContext } from "@/context/active-section-context";
 import { links } from "@/lib/data";
-import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const Header = () => {
-  const [activeSection, setActiveSection] = useState("Kezdőlap");
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
+
   return (
     <header className="z-[999] relative">
       <motion.div
@@ -35,7 +37,10 @@ const Header = () => {
                   { "text-blue-500": activeSection === link.name }
                 )}
                 href={link.hash}
-                onClick={() => setActiveSection(link.name)}
+                onClick={() => {
+                  setActiveSection(link.name);
+                  setTimeOfLastClick(Date.now());
+                }}
               >
                 {link.name}
                 {link.name === activeSection && (
