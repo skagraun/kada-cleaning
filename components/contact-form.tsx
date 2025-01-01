@@ -20,7 +20,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { sendMail } from "@/lib/send-mail";
 import { useTransition } from "react";
 import { sendRequestFormAction } from "@/actions/mail";
 
