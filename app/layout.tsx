@@ -6,6 +6,7 @@ import ActiveSectionContextProvider from "@/context/active-section-context";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme.provider";
 import Header from "@/components/header";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "KaDa Cleaning",
@@ -36,6 +37,7 @@ export default function RootLayout({
             <Header />
             {children}
           </ActiveSectionContextProvider>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
