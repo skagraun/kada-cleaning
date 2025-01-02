@@ -1,7 +1,7 @@
 export const links = [
   {
     name: "Kezdőlap",
-    hash: "#home",
+    hash: "#kezdolap",
   },
   {
     name: "Szolgáltatások",

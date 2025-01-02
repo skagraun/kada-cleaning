@@ -1,14 +1,16 @@
 "use client";
 
+import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
 import { Loader2 } from "lucide-react";
 
+import { sendRequestFormAction } from "@/actions/mail";
 import { ContactMeSchema } from "@/lib/validation";
-
 import { useToast } from "@/hooks/use-toast";
+
 import {
   Form,
   FormControl,
@@ -20,8 +22,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { useTransition } from "react";
-import { sendRequestFormAction } from "@/actions/mail";
 
 const ContactForm = () => {
   const { toast } = useToast();

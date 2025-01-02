@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -13,12 +14,11 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 import carouselImg01 from "@/public/heroesImg/001.png";
 import carouselImg02 from "@/public/heroesImg/002.png";
 import carouselImg03 from "@/public/heroesImg/003.png";
-import Link from "next/link";
 
 const HeroSection = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -39,7 +39,7 @@ const HeroSection = () => {
   const { ref } = useSectionInView("Kezdőlap");
 
   return (
-    <section ref={ref} id="home" className="scroll-mt-96">
+    <section ref={ref} id="kezdolap" className="scroll-mt-96">
       <div className="flex items-center justify-center">
         <div className="relative w-full md:pt-0 pt-[3.5rem]">
           <motion.div
