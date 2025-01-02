@@ -10,7 +10,7 @@ export const sendRequestFormAction = async (values: any) => {
     const message = values.message;
 
     await sendEmail({
-      to: "info@skasoft.hu",
+      to: "ajanlatkeres@szlkp.hu",
       templateName: "ContactSubmission",
       dynamicTemplateData: {
         name,

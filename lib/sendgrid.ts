@@ -16,7 +16,7 @@ export const sendEmail = async ({
   const msg: MailDataRequired = {
     to,
     from: {
-      email: "info@skasoft.hu",
+      email: "ajanlatkeres@szlkp.hu",
       name: "KaDa Cleaning",
     },
     templateId: templates[templateName],
