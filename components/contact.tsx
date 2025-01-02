@@ -1,14 +1,28 @@
 "use client";
 
-import { useSectionInView } from "@/lib/hooks";
+import { useRef } from "react";
+import { useScroll, motion, useTransform } from "framer-motion";
+
 import SectionHeading from "./section-heading";
 import ContactForm from "./contact-form";
 
 const ContactSection = () => {
-  const { ref } = useSectionInView("Kapcsolat", 0.9);
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.25 1"],
+  });
+
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
+
   return (
-    <section
+    <motion.section
       ref={ref}
+      style={{
+        scale: scaleProgress,
+        opacity: opacityProgress,
+      }}
       className="md:mt-12 mt-4 md:scroll-mt-20 scroll-mt-16"
       id="kapcsolat"
     >
@@ -34,7 +48,7 @@ const ContactSection = () => {
           <ContactForm />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

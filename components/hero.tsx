@@ -18,6 +18,7 @@ import { Button } from "./ui/button";
 import carouselImg01 from "@/public/heroesImg/001.png";
 import carouselImg02 from "@/public/heroesImg/002.png";
 import carouselImg03 from "@/public/heroesImg/003.png";
+import Link from "next/link";
 
 const HeroSection = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -100,8 +101,11 @@ const HeroSection = () => {
                 Irodaházak, társasházak takarítása
               </h2>
             </div>
-            <Button className="md:mt-7 mt-2 uppercase md:text-lg text-sm md:py-8 md:px-6 md:tracking-widest tracking-wider">
-              Kérjen ajánlatot
+            <Button
+              asChild
+              className="md:mt-7 mt-2 uppercase md:text-lg text-sm md:py-8 md:px-6 md:tracking-widest tracking-wider"
+            >
+              <Link href={"/#kapcsolat"}>Kérjen ajánlatot</Link>
             </Button>
           </motion.div>
         </div>
