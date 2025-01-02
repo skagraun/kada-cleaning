@@ -44,7 +44,7 @@ const ContactForm = () => {
       if (!errorMessage) {
         toast({
           title: "Sikeres küldés!",
-          description: "Az ajánlatkérés sikeresen továbbítva lett!",
+          description: "Az ajánlat kérés sikeresen továbbítva lett!",
         });
         form.reset();
       }
